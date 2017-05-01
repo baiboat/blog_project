@@ -1,0 +1,42 @@
+{% load staticfiles %}
+<div class="banner">
+      <div id="slide-holder">
+        <div id="slide-runner"> <a href="{% url 'article' %}?id={{ article_ad_list0.id }}" target="_blank"><img id="slide-img-1" src="{% static 'images/a1.jpg' %}"  alt="" /></a> <a href="{% url 'article' %}?id={{ article_ad_list1.id }}" target="_blank"><img id="slide-img-2" src="{% static 'images/a2.jpg' %}"  alt="" /></a> <a href="{% url 'article' %}?id={{ article_ad_list2.id }}" target="_blank"><img id="slide-img-3" src="{% static 'images/a3.jpg' %}"  alt="" /></a> <a href="{% url 'article' %}?id={{ article_ad_list3.id }}" target="_blank"><img id="slide-img-4" src="{% static 'images/a4.jpg' %}"  alt="" />
+          <div id="slide-controls">
+            <p id="slide-client" class="text"><strong></strong><span></span></p>
+            <p id="slide-desc" class="text"></p>
+            <p id="slide-nav"></p>
+          </div>
+        </div>
+      </div>
+      <script>
+    if(!window.slider) {
+    var slider={};
+  }
+
+  slider.data= [
+    {
+        "id":"slide-img-1", // 与slide-runner中的img标签id对应
+        "client":"{{ article_ad_list0.title }}",
+        "desc":"{{ article_ad_list0.desc }}" //这里修改描述
+    },
+    {
+        "id":"slide-img-2",
+        "client":"{{ article_ad_list1.title }}",
+        "desc":"{{ article_ad_list1.desc }}"
+    },
+    {
+        "id":"slide-img-3",
+        "client":"{{ article_ad_list2.title }}",
+        "desc":"{{ article_ad_list2.desc }}"
+    },
+    {
+        "id":"slide-img-4",
+        "client":"{{ article_ad_list3.title }}",
+        "desc":"{{ article_ad_list3.desc }}"
+    }
+  ];
+
+    </script>
+    </div>
+    <!-- banner代码 结束 -->
